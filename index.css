@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  clear: both;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: #f1f1f1;
+}
+/* --------------------- */
+.navBar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: fit-content;
+  height: 100%;
+  color: #313b42;
+  transition: 1s ease-in-out;
+  z-index: 10;
+}
+.navBar ul li a i {
+  color: #313b42;
+}
+/* ---------------- */
+.hoverBar {
+  height: 100%;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  transition: 1s ease-in-out;
+}
+.hoverBar ul {
+  margin: 30px 30%;
+}
+.hoverBar ul li {
+  list-style: none;
+  width: fit-content;
+}
+.hoverBar ul li a {
+  text-decoration: none;
+  color: #313b42;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+.hoverBar ul li:hover a i {
+  transition: 0.3s ease-in-out;
+}
+.hoverBar ul li:hover a,
+.hoverBar ul li:hover a i {
+  color: #b6e4fb;
+  text-shadow: 0 0 1px rgb(121, 121, 121);
+}
+/* --- */
+.hoverBar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #b6e4fb;
+  clip-path: circle(0% at 100% 0);
+  transition: 1s ease-in-out;
+}
+/* --- */
+.hoverBar .logo li a i {
+  font-size: 2em;
+}
+/* --- */
+.hoverBar .menu {
+  font-size: 2em;
+}
+/* --- */
+.hoverBar .social {
+  display: flex;
+}
+.hoverBar .social li {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.hoverBar .social li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+/* --------------- */
+.mainBar {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  transition: 0.9s ease-in-out;
+  overflow: hidden;
+}
+.mainBar ul {
+  margin: 20px;
+  width: 100%;
+  text-align: center;
+}
+.mainBar ul li {
+  position: relative;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  list-style: none;
+}
+.mainBar ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+.mainBar .logo i {
+  font-size: 1.3em;
+}
+.toggle {
+  position: relative;
+  top: 10%;
+}
+.toggle::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  content: "\f0c9 ";
+  font-family: fontAwesome;
+  text-align: center;
+  font-size: 1.3em;
+}
+.toggle.active::before {
+  content: "\f00d";
+}
+.mainBar .social {
+  position: relative;
+}
+.mainBar .social li {
+  position: relative;
+  animation: animate 8s linear infinite;
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(380px);
+  }
+  50% {
+    transform: translateY(380px);
+  }
+  75% {
+    transform: translateY(0);
+  }
+}
+.mainBar .social::before {
+  content: "Yizhak Gete Site Design";
+  position: absolute;
+  transform: rotate(-90deg);
+  bottom: 60%;
+  left: -93px;
+  text-align: left;
+  height: 55px;
+  width: 250px;
+  letter-spacing: 10px;
+  animation: animate2 8s linear infinite;
+}
+@keyframes animate2 {
+  0%,
+  100% {
+    transform: rotate(-90deg) translateX(-380px);
+  }
+  25% {
+    transform: rotate(-90deg) translateX(0);
+  }
+  50% {
+    transform: rotate(-90deg) translateX(0);
+  }
+  75% {
+    transform: rotate(-90deg) translateX(-380px);
+  }
+}
+/* --------------------- */
+.gridContainer {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
+}
+.item:nth-child(1) {
+  background: #b6e4fb;
+  grid-area: 1/1/4/3;
+}
+.item:nth-child(2) {
+  background: #d7c4eb;
+}
+.item:nth-child(3) {
+  background: #ffeeb1;
+}
+.item:nth-child(4) {
+  background: #f3f3f5;
+}
+.item:nth-child(5) {
+  background: #ffced3;
+}
+.item:nth-child(6) {
+  background: #ffffff;
+}
+.item:nth-child(7) {
+  background: #fec757;
+}
+
+/* ---------------- */
+.gallery {
+  position: relative;
+  height: var(--windowHeight);
+  width: 100%;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.gallery .bgImg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 650px;
+  width: auto;
+  background: url(./img/desktop.jpg);
+}
+
+.scrollBox {
+  position: relative;
+  top: 11%;
+  height: fit-content;
+}
+
+.scrollBox:hover .scroll {
+  animation-play-state: paused;
+}
+
+.scroll {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1600px;
+  z-index: 3;
+  overflow: hidden;
+  zoom: 0.8;
+  transition: 0.5s;
+  animation: scrolling1 10s infinite linear;
+}
+
+.scroll:last-child {
+  left: 1600px;
+}
+
+@keyframes scrolling1 {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+@keyframes scrolling2 {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.scroll .container {
+  position: relative;
+  height: 330px;
+  width: 240px;
+  background: #fafcf9;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: 1s ease-out; 
+}
+
+.scroll .container:hover {
+  width: 700px;
+  cursor: pointer;
+}
+
+.scroll .container::before,
+.scroll .container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+
+.scroll .container::after {
+  top: -20px;
+  left: -10px;
+  height: calc(100% + 20px);
+  width: calc(100% + 20px);
+  filter: blur(10px);
+  opacity: .6;
+}
+
+.scroll .container:nth-child(1):before,
+.scroll .container:nth-child(1)::after {
+  background: url(./img/apple.png);
+  background-position: 50% -500%;
+  background-size: 150%;
+  background-repeat: no-repeat;
+}
+
+.scroll .container:nth-child(2):before,
+.scroll .container:nth-child(2)::after {
+  background: url(./img/orange.png);
+  background-position: 50% -500%;
+  background-size: 150%;
+  background-repeat: no-repeat;
+}
+
+.scroll .container:nth-child(3):before,
+.scroll .container:nth-child(3)::after {
+  background: url(./img/watermelon.png);
+  background-position: 50% -400%;
+  background-size: 150%;
+  background-repeat: no-repeat;
+}
+
+.scroll .container:nth-child(4):before,
+.scroll .container:nth-child(4)::after {
+  background: url(./img/banana.png);
+  background-position: 50% -350%;
+  background-size: 150%;
+  background-repeat: no-repeat;
+}
+
+.scroll .container .text {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  padding: 20px;
+  text-align: center;
+}
+
+.scroll .container .text h1 {
+  text-transform: uppercase;
+}
+
+.scroll .container .text p {
+  margin-top: 10px;
+  min-width: 400px;
+  opacity: 0;
+  transition: .3s ease-in;
+}
+
+.scroll .container:hover .text p {
+  opacity: 1;
+  transition-duration: 1.5s;
+}
+
+.scroll .container .round {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  transform: translate(10%, 10%);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #a69b86;
+  overflow: hidden;
+}
+
+.scroll .container .round::before {
+  content: "\f067  ";
+  font-family: fontAwesome;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+/* ---------------- */
+
+@media screen and (min-width: 800px) {
+  .navBar:hover .mainBar {
+    width: 0;
+  }
+  .navBar:hover .hoverBar {
+    width: 50vw;
+  }
+  .hoverBar:hover::before {
+    clip-path: circle(50% at 100% 0);
+  }
+}
+@media screen and (max-width: 800px) {
+  .mainBar.active{
+    width: 40px;
+  }
+  .mainBar .social::before {
+    font-size: .6em;
+  }
+  .hoverBar ul {
+    margin: 30px 20vw;
+  }
+  .hoverBar.active{
+    width: calc(100vw - 40px);
+  }
+  .hoverBar.active::before {
+    clip-path: circle(50% at 100% 0);
+    z-index: 1;
+  }
+  .hoverBar ul{
+    z-index: 2;
+  }
+  .nav{
+    justify-content: center;
+}
+.gallery .bgImg{
+    zoom: .5;
+}
+.scrollBox {
+    top: 35%;
+    zoom: .5;
+}
+}
