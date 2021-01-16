@@ -5,11 +5,13 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   clear: both;
+  scroll-behavior: smooth;
 }
 body {
   width: 100%;
   height: 100vh;
   background: #f1f1f1;
+  overflow: hidden;
 }
 /* --------------------- */
 .navBar {
@@ -43,15 +45,18 @@ body {
 }
 .hoverBar ul li {
   list-style: none;
-  width: fit-content;
+  width: 150px;
 }
 .hoverBar ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   color: #313b42;
   font-weight: 600;
   transition: 0.3s ease-in-out;
 }
-.hoverBar ul li:hover a i {
+.hoverBar ul li a:hover i {
   transition: 0.3s ease-in-out;
 }
 .hoverBar ul li:hover a,
