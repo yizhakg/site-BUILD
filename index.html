@@ -19,9 +19,9 @@
       <ul class="menu">
         <li><a href="#main" onclick="toggleMenu()">Main</a></li>
         <li><a href="#" onclick="toggleMenu()">About</a></li>
-        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-        <li><a href="#" onclick="toggleMenu()">My Work</a></li>
-        <li><a href="#" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="#" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#myWork" onclick="toggleMenu()">My Work</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </ul>
       <ul class="social">
         <li><a href="https://twitter.com/gete722" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -56,7 +56,7 @@
     <div class="item"></div>
     <div class="item"></div>
   </div>
-  <div class="gallery" id="skills">
+  <div class="gallery" id="myWork">
     <img src="./img/desktop.jpg" alt="" class="bgImg">
     <div class="scrollBox">
         <div class="scroll">
@@ -136,6 +136,38 @@
             </div>
         </div>
     </div>
+</div>
+<div id="contact" class="container">
+  <div class="textField">
+    <h1>Contact Me</h1>
+    </br>
+    <p>write a message and i i'll contact you soon
+    </p>
+    </br>
+    <div class="formContact">
+      <input type="text" id="Name" placeholder="Name"><input type="email" placeholder="Email">
+      <input type="text" id="Subject" placeholder="Subject">
+      <textarea id="Message" placeholder="Message" cols="10" rows="7"></textarea>
+      </br>
+      <button class="buttonHover">Send</button>
+    </div>
+  </div>
+  <div class="contactInfo">
+    <div class="card">
+      <div class="imgBox">
+        <img src="./logo/image.png" alt="">
+      </div>
+      <div class="text">
+        <h1>Contact</h1>
+        <ul class="info">
+          <li>Yizhak Gete</li>
+          <li>972-529527969</li>
+          <li>Yizhakg@gmail.com</li>
+          <li>Hadera, Israel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
   <script src="index.js"></script>
 </body>

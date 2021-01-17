@@ -7,6 +7,12 @@
   clear: both;
   scroll-behavior: smooth;
 }
+:root {
+  --mainColor: #b6e4fb;
+  --mainTextcolor:#313b42;;
+  --red: #fd1056;
+  --green: #16f0d1;
+}
 body {
   width: 100%;
   height: var(--windowHeight);
@@ -18,13 +24,13 @@ body {
   position: fixed;
   top: 0;
   width: fit-content;
-  height: var(--windowHeight);;
-  color: #313b42;
+  height: var(--windowHeight);
+  color: var(--mainTextcolor);
   transition: 1s ease-in-out;
   z-index: 10;
 }
 .navBar ul li a i {
-  color: #313b42;
+  color: var(--mainTextcolor);
 }
 /* ---------------- */
 .hoverBar {
@@ -51,7 +57,7 @@ body {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: #313b42;
+  color: var(--mainTextcolor);
   font-weight: 600;
   transition: 0.3s ease-in-out;
 }
@@ -69,7 +75,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #b6e4fb;
+  background: var(--mainColor);
   clip-path: circle(0% at 100% 0);
   transition: 1s ease-in-out;
 }
@@ -139,7 +145,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   content: "\f0c9 ";
   font-family: fontAwesome;
   text-align: center;
@@ -199,7 +205,7 @@ body {
 }
 /* --------------------- */
 .gridContainer {
-  height: var(--windowHeight);;
+  height: var(--windowHeight);
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -234,7 +240,7 @@ body {
   height: var(--windowHeight);
   width: 100%;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .gallery .bgImg {
@@ -276,19 +282,19 @@ body {
 
 @keyframes scrolling1 {
   0% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
-      transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes scrolling2 {
   0% {
-      transform: translateX(100%);
+    transform: translateX(100%);
   }
   100% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
@@ -299,7 +305,7 @@ body {
   background: #fafcf9;
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  transition: 1s ease-out; 
+  transition: 1s ease-out;
 }
 
 .scroll .container:hover {
@@ -325,7 +331,7 @@ body {
   height: calc(100% + 20px);
   width: calc(100% + 20px);
   filter: blur(10px);
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .scroll .container:nth-child(1):before,
@@ -377,7 +383,7 @@ body {
   margin-top: 10px;
   min-width: 400px;
   opacity: 0;
-  transition: .3s ease-in;
+  transition: 0.3s ease-in;
 }
 
 .scroll .container:hover .text p {
@@ -408,6 +414,193 @@ body {
   font-size: 20px;
   color: #fff;
 }
+
+/* contact */
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: var(--windowHeight);
+  width: 100%;
+}
+#contact .textField p {
+  font-size: 0.7em;
+}
+.formContact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  grid-gap: 10px;
+  width: fit-content;
+  position: relative;
+}
+.formContact:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  height: 93%;
+  width: 100%;
+  z-index: -1;
+  border: 1px solid var(--mainColor);;
+  transition: all 0.3s linear;
+}
+
+.formContact:hover:before {
+  top: 10px;
+  right: 10px;
+}
+.formContact input:nth-child(3),
+.formContact textarea {
+  grid-column: 1/3;
+}
+.formContact input[type="text"],
+.formContact input[type="email"],
+.formContact textarea {
+  background: var(--mainColor);
+  border: none;
+  padding: 10px 15px;
+  color: var(--mainTextcolor);
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+}
+.buttonHover {
+  display: block;
+  height: 30px;
+  width: 70px;
+  margin-top: 5px;
+  background: var(--mainColor);
+  font-size: 1em;
+  font-weight: 900;
+  border: 1px solid var(--mainColor);
+  position: relative;
+  color: var(--mainTextcolor);
+  cursor: pointer;
+  outline: none;
+  justify-self: flex-end;
+}
+.buttonHover:before {
+  content: "";
+  position: absolute;
+  background: var(--background);
+  top: 3px;
+  right: 3px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border: 1px solid var(--mainColor);
+  transition: all 0.3s linear;
+}
+
+.buttonHover:hover:before {
+  top: 10px;
+  right: 10px;
+}
+.buttonHover:active {
+  background: var(--mainTextcolor);
+  color: var(--mainColor);
+}
+/* ------ */
+.contactInfo {
+  position: relative;
+  height: 400px;
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  background: #b6e4fb;
+  overflow: hidden;
+}
+.contactInfo .card {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  z-index: 0;
+}
+.contactInfo .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #7bd3ff;
+  clip-path: circle(40% at 80% 10%);
+  transition: 0.5s;
+}
+.contactInfo .card:hover::before {
+  clip-path: circle(60% at 70% 5%);
+}
+.contactInfo .card::after {
+  content: "GETE";
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  color: #c4eaff;
+  font-size: 100px;
+  font-weight: 900;
+  z-index: 1;
+}
+.contactInfo .imgBox {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+.contactInfo img {
+  height: 200px;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  transform: rotate(-25deg);
+}
+.contactInfo .card:hover .imgBox {
+  top: 20%;
+}
+.contactInfo h1,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+.contactInfo .text {
+  position: absolute;
+  color: var(--mainTextcolor);
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: 0.5s;
+  z-index: 2;
+}
+.contactInfo .card:hover .text {
+  top: 40%;
+}
+.contactInfo ul {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.8s;
+}
+.contactInfo .card:hover ul {
+  opacity: 0.9;
+}
+.contactInfo ul li {
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  /* display: block; */
+  list-style: none;
+  transition: 0.3s;
+}
+.contactInfo ul li:hover {
+  box-shadow: 3px 3px 1px 1px var(--mainColor);
+  transform: scale(1.5);
+  background-color: rgba(204, 202, 202, 0.377);
+}
+
 /* ---------------- */
 
 @media screen and (min-width: 800px) {
@@ -422,33 +615,43 @@ body {
   }
 }
 @media screen and (max-width: 800px) {
-  .mainBar.active{
+  .mainBar.active {
     width: 40px;
   }
   .mainBar .social::before {
-    font-size: .6em;
+    font-size: 0.6em;
   }
   .hoverBar ul {
     margin: 30px 20vw;
   }
-  .hoverBar.active{
+  .hoverBar.active {
     width: calc(100vw - 40px);
   }
   .hoverBar.active::before {
     clip-path: circle(50% at 100% 0);
     z-index: 1;
   }
-  .hoverBar ul{
+  .hoverBar ul {
     z-index: 2;
   }
-  .nav{
+  .nav {
     justify-content: center;
-}
-.gallery .bgImg{
-    zoom: .5;
-}
-.scrollBox {
+  }
+  .gallery .bgImg {
+    zoom: 0.5;
+  }
+  .scrollBox {
     top: 35%;
+    zoom: 0.5;
+  }
+  #contact{
+    flex-direction: column;
+    text-align: center;
+  }
+  #contact .textField{
     zoom: .5;
-}
+  }
+  #contact .contactInfo{
+    zoom: .5;
+  }
 }
