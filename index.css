@@ -9,7 +9,7 @@
 }
 body {
   width: 100%;
-  height: 100vh;
+  height: var(--windowHeight);
   background: #f1f1f1;
 }
 /* --------------------- */
@@ -18,7 +18,7 @@ body {
   position: fixed;
   top: 0;
   width: fit-content;
-  height: 100%;
+  height: var(--windowHeight);;
   color: #313b42;
   transition: 1s ease-in-out;
   z-index: 10;
@@ -199,11 +199,11 @@ body {
 }
 /* --------------------- */
 .gridContainer {
-  height: 100%;
+  height: var(--windowHeight);;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 .item:nth-child(1) {
   background: #b6e4fb;
