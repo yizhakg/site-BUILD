@@ -9,7 +9,7 @@
 }
 :root {
   --mainColor: #b6e4fb;
-  --mainTextcolor:#313b42;;
+  --mainTextcolor: #313b42;
   --red: #fd1056;
   --green: #16f0d1;
 }
@@ -80,8 +80,9 @@ body {
   transition: 1s ease-in-out;
 }
 /* --- */
-.hoverBar .logo li a i {
-  font-size: 2em;
+.hoverBar .logo li a img {
+  height: 100px;
+  width: auto;
 }
 /* --- */
 .hoverBar .menu {
@@ -133,8 +134,9 @@ body {
   width: 100%;
   text-decoration: none;
 }
-.mainBar .logo i {
-  font-size: 1.3em;
+.mainBar .logo img {
+  height: 30px;
+  width: auto;
 }
 .toggle {
   position: relative;
@@ -420,7 +422,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   height: var(--windowHeight);
   width: 100%;
 }
@@ -443,7 +444,7 @@ body {
   height: 93%;
   width: 100%;
   z-index: -1;
-  border: 1px solid var(--mainColor);;
+  border: 1px solid var(--mainColor);
   transition: all 0.3s linear;
 }
 
@@ -590,7 +591,7 @@ h1 {
 .contactInfo ul li {
   padding: 8px;
   border-radius: 5px;
-  font-size: 13px;
+  font-size: 15px;
   /* display: block; */
   list-style: none;
   transition: 0.3s;
@@ -598,7 +599,7 @@ h1 {
 .contactInfo ul li:hover {
   box-shadow: 3px 3px 1px 1px var(--mainColor);
   transform: scale(1.5);
-  background-color: rgba(204, 202, 202, 0.377);
+  /* background-color: rgba(204, 202, 202, 0.377); */
 }
 
 /* ---------------- */
@@ -615,8 +616,12 @@ h1 {
   }
 }
 @media screen and (max-width: 800px) {
+  .mainBar {
+    background: transparent;
+  }
   .mainBar.active {
     width: 40px;
+    background: #fff;
   }
   .mainBar .social::before {
     font-size: 0.6em;
@@ -644,14 +649,14 @@ h1 {
     top: 35%;
     zoom: 0.5;
   }
-  #contact{
+  #contact {
     flex-direction: column;
     text-align: center;
   }
-  #contact .textField{
-    zoom: .5;
+  #contact .textField {
+    zoom: 0.5;
   }
-  #contact .contactInfo{
-    zoom: .5;
+  #contact .contactInfo {
+    zoom: 0.5;
   }
 }
