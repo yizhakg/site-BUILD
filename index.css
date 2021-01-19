@@ -47,6 +47,7 @@ body {
 }
 .hoverBar ul {
   margin: 30px 30%;
+  z-index:2;
 }
 .hoverBar ul li {
   list-style: none;
@@ -152,9 +153,6 @@ body {
   font-family: fontAwesome;
   text-align: center;
   font-size: 1.3em;
-}
-.mainBar .toggle.active::before {
-  content: "\f00d";
 }
 .mainBar .social {
   position: relative;
@@ -629,6 +627,9 @@ h1 {
   }
   .mainBar .toggle{
     top: 0;
+  }
+  .mainBar .toggle.active::before {
+    content: "\f00d";
   }
   .mainBar .social::before {
     font-size: 0.6em;
